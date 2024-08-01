@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/getsslinfo" method="post">
+        <input type="text" name="domain" id="" placeholder="Enter the domain">
+        <input type="submit" value="get info">
+    </form>
+    <% if(data){%>
+    <table>
+        <thead>
+            <tr>
+                <th>Days Remaining</th>
+                <th>Valid certificate</th>
+                <th>Valid from</th>
+                <th>valid till</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><%= data.daysRemaining %></td>
+                <td><%= data.valid %></td>
+                <td><%= data.validFrom %></td>
+                <td><%= data.validTo %></td>
+            </tr>
+        </tbody>
+    </table>
+    <%}%>
+</body>
+</html>
